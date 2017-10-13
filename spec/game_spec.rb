@@ -5,6 +5,7 @@ describe Game do
   let(:player1) {double :player1}
   let(:player2) {double :player2}
 
+
   it 'allows player to attack another player' do
     expect(game).to respond_to(:attack).with(1).argument
   end
@@ -27,4 +28,16 @@ describe Game do
       game.attack(player2)
     end
   end
+
+  describe '#switch_players' do
+    it 'switche players' do
+      expect(game).to respond_to(:switch_players)
+    end
+  end
+
+  it 'switches player in control after attack' do
+    game.switch_players
+    expect(game.player1).to eq player2
+  end
+
 end
