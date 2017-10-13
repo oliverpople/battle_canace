@@ -1,8 +1,8 @@
 <h1>
-  <%= @player1.name %>
-  <%= @player1.hp_value %>HP vs
-  <%= @player2.name%>
-  <%= @player2.hp_value %>HP
+  <%= @game.player1.name %>
+  <%= @game.player1.hp_value %>HP vs
+  <%= @game.player2.name%>
+  <%= @game.player2.hp_value %>HP
 </h1>
 
 <form method='POST' action='/attack'>
