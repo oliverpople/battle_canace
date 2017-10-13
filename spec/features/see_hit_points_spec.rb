@@ -10,6 +10,8 @@ feature "redirects to player info" do
     sign_in_and_play
     click_button "Attack"
     click_link "OK"
-    expect(page).to have_content "Edward 60HP vs Oliver 60HP"
+    expect(page).to have_content "Edward 60HP vs Oliver 50HP"
     end
+
+
 end
