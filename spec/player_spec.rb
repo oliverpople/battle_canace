@@ -12,7 +12,13 @@ subject(:player) {described_class.new('Dave')}
   end
 
   it "allows player to attack another player" do
-    expect(player).to respond_to(:attack).with(1).argument 
+    expect(player).to respond_to(:attack).with(1).argument
+  end
+
+  it "damages target after player attack" do
+    player2= Player.new('Oliver')
+    expect(player2).to receive(:receive_damage)
+    player.attack(player2)
   end
 
   it "reduces target's HP value by 10 after attack" do
